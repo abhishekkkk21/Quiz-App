@@ -1,0 +1,292 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 90vh;
+    /* background: linear-gradient(to right bottom, #08203e, #557c93); */
+background-image:url("newbg.jpg");
+background-size: 100% 100%;
+    
+   
+background-color: purple;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    /* background-color: #181E2B; */
+    color: #fff;
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    width: 80%;
+    max-width: 850px;
+    padding: 80px;
+    text-align: center;
+    display: none;
+}
+
+.container h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+
+.container .question {
+    font-size: 26px;
+    margin-top: 20px;
+}
+
+.container .choices {
+    margin-top: 20px;
+}
+
+.choice {
+    font-size: 20px;
+    background-color: #eee;
+    color: #000;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    width: 60%;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(50%);
+    animation: fade-in 0.5s ease forwards;
+}
+
+.choice:hover{
+    background-color: #ddd;
+}
+
+.choice.selected{
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn{
+    width: 60%;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 12px 20px;
+    margin: 20px auto 0 auto;
+    background-color: #006400;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #08780c;
+}
+
+.scoreCard{
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.alert{
+    background-color: #5d9b63;
+    border-radius: 5px;
+    width: 100%;
+    padding: 12px;
+    position: absolute;
+    top: 0;
+    display: none;
+}
+
+.startBtn{
+    width: 15%;
+    padding-block: 20px;
+    text-align: center;
+}
+
+.timer{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background-color: #08203e;
+    border: 2px solid #f00;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+
+#quitBtn {
+    align-items: center;
+    background-color: #e74c3c;
+    /* Red background */
+    color: white;
+    /* White text */
+    border: none;
+    /* No border */
+    border-radius: 5px;
+    /* Rounded corners */
+    padding: 10px 20px;
+    /* Padding for size */
+    font-size: 16px;
+    /* Font size */
+    font-weight: bold;
+    /* Bold text */
+    cursor: pointer;
+    /* Cursor change on hover */
+    transition: background-color 0.3s, transform 0.2s;
+    /* Smooth transition */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    
+}
+
+#quitBtn:hover {
+    background-color: #c0392b;
+    /* Darker red on hover */
+    transform: translateY(-3px);
+    /* Slight lift on hover */
+}
+
+#quitBtn:active {
+    background-color: #a93226;
+    /* Even darker red on click */
+    transform: translateY(1px);
+    /* Slight press effect */
+}
+
+#backhome{
+    background-color: #e74c3c;
+        /* Red background */
+        color: white;
+        /* White text */
+        border: none;
+        /* No border */
+        border-radius: 5px;
+        /* Rounded corners */
+        padding: 10px 20px;
+        /* Padding for size */
+        font-size: 16px;
+        /* Font size */
+        font-weight: bold;
+        /* Bold text */
+        cursor: pointer;
+        /* Cursor change on hover */
+        transition: background-color 0.3s, transform 0.2s;
+        /* Smooth transition */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        /* Subtle shadow */
+
+}
+#backhome:hover {
+    background-color: #c0392b;
+    /* Darker red on hover */
+    transform: translateY(-3px);
+    /* Slight lift on hover */
+}
+
+#backhome:active {
+    background-color: #a93226;
+    /* Even darker red on click */
+    transform: translateY(1px);
+    /* Slight press effect */
+}
+
+
+
+footer {
+    position: fixed;
+    /* Fixes the footer at the bottom */
+    bottom: 0;
+    /* Positions it at the very bottom */
+    left: 0;
+    /* Aligns it to the left edge */
+    right: 0;
+    /* Aligns it to the right edge */
+    color: #525252;
+    /* Text color */
+    font-size: 15px;
+    /* Font size */
+    text-align: center;
+    /* Center-align text */
+    font-weight: 600;
+    /* Font weight */
+    z-index: 999;
+    /* Stays on top of other content */
+    background-color: #fff;
+    /* Background color */
+    padding: 10px 0;
+    /* Padding for spacing */
+    width: 100%;
+    /* Stretches across the width */
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+    /* Adds a subtle shadow above the footer */
+}
+
+
+
+footer p a {
+    color: black;
+    text-decoration: none;
+}
+
+/* Adding Animation to Timer */
+@keyframes pulse{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+/* Adding Animation to choices */
+@keyframes fade-in{
+    0%{
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width:900px){
+    .container {
+        width: 100%;
+        margin-top: 50px;
+    }
+    .container h1{
+        font-size: 24px;
+    }
+    .container .question{
+        font-size: 22px;
+    }
+
+    .timer{
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .startBtn{
+        width: 50%;
+    }
+}
